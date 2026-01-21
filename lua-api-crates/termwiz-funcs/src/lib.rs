@@ -245,8 +245,7 @@ fn permute_any_or_no_mods<'lua>(
 
 lazy_static::lazy_static! {
     static ref CAPS: Capabilities = {
-        let data = include_bytes!("../../../termwiz/data/xterm-256color");
-        let db = terminfo::Database::from_buffer(&data[..]).unwrap();
+        let db = terminfo::Database::from_buffer(termwiz::terminfo_data::XTERM_256COLOR).unwrap();
         Capabilities::new_with_hints(
             ProbeHints::new_from_env()
                 .term(Some("xterm-256color".into()))

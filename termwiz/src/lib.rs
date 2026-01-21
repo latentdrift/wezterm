@@ -41,6 +41,7 @@
 //! * `use_serde` - makes a number of structs serde serializable
 
 pub mod caps;
+pub mod terminfo_data;
 pub use wezterm_cell as cell;
 pub use wezterm_cell::color;
 pub use wezterm_surface::cellcluster;
